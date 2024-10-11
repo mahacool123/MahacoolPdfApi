@@ -84,7 +84,7 @@
 
 
 
-
+require('dotenv').config();
 const admin = require('firebase-admin');
 const path = require('path');
 const { v4: uuidv4 } = require('uuid'); // For generating unique file names
@@ -92,11 +92,13 @@ const fs = require('fs'); // Import the fs module
 const pdf = require('html-pdf'); // For HTML to PDF conversion
 
 // Initialize Firebase Admin SDK
-const serviceAccount = require('./mahacool-5b59f-firebase-adminsdk-er29u-4a752e1132.json');
-
 admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  storageBucket: 'mahacool-5b59f.appspot.com' // Updated to 'appspot.com'
+  credential: admin.credential.cert({
+    projectId: process.env.FIREBASE_PROJECT_ID,
+    privateKey: process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, '\n'),
+    clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+  }),
+  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
 });
 
 // Cloud Storage
