@@ -233,23 +233,23 @@ router.post('/updatePaidTotals/:customerId', async (req, res) => {
             <h1>Invoice Details for Customer ID: ${customerId}</h1>
             <div class="customer-details">
                 <h3>Customer Information</h3>
-                <p><strong>Name:</strong> ${customer.name}</p>
-                <p><strong>Business Name:</strong> ${customer.bussinessName}</p>
-                <p><strong>Email:</strong> ${customer.email}</p>
-                <p><strong>Mobile:</strong> ${customer.mobile}</p>
-                <p><strong>Address:</strong> ${customer.address}</p>
-                <p><strong>GST Number:</strong> ${customer.gstNumber || 'N/A'}</p>
+                <p>Name:</strong> ${customer.name}</p>
+                <p>Business Name:${customer.bussinessName}</p>
+                <p>Email: ${customer.email}</p>
+                <p>Mobile: ${customer.mobile}</p>
+                <p>Address: ${customer.address}</p>
+                <p>GST Number: ${customer.gstNumber || 'N/A'}</p>
             </div>
             <div class="invoice-details">
                 <h3>Invoice Summary</h3>
                 <p><strong>Paid Amount:</strong> ₹${paidGrandTotalAmounts.toFixed(2)}</p>
-                <p class="total"><strong>Total Paid Amount:</strong> ₹${totalPaidAmount.toFixed(2)}</p>
-                <p class="total"><strong>Grand Total Amount with 18% GST:</strong> ₹${grandTotalAmount.toFixed(2)}</p>
-                <p class="total"><strong>Unpaid Remaining Amount:</strong> ₹${unpaidRemainingAmount.toFixed(2)}</p>
+                <p class="total">Total Paid Amount: ₹${totalPaidAmount.toFixed(2)}</p>
+                <p class="total">Grand Total Amount with 18% GST: ₹${grandTotalAmount.toFixed(2)}</p>
+                <p class="total">Unpaid Remaining Amount:₹${unpaidRemainingAmount.toFixed(2)}</p>
             </div>
             <div class="payment-info">
                 <h3>Payment Details</h3>
-                <p><strong>Payment Date:</strong> ${paymentDate.toLocaleDateString()}</p>
+                <p>Payment Date: ${paymentDate.toLocaleDateString()}</p>
             </div>
         </div>
     `;
