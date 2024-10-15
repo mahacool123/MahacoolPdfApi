@@ -116,37 +116,12 @@ const uploadFile = async (file) => {
     const pdfFilePath = path.join('/tmp', uniqueFilename);
     const htmlContent = buffer.toString('utf8');
 
-    // Wrap HTML content with Tailwind CSS link
-    const htmlWithTailwind = `
-      <!DOCTYPE html>
-      <html lang="en">
-      <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-        <title>Document</title>
-      </head>
-      <body>
-        ${htmlContent}
-      </body>
-      </html>
-    `;
-
     // PDF options
-    const options = {
-      format: 'A4',           // Standard A4 format
-      border: {
-        top: '1cm',
-        right: '1cm',
-        bottom: '1cm',
-        left: '1cm'
-      },
-      timeout: 60000,         // 60 seconds timeout to avoid long-running processes
-    };
+    const options = { format: 'A4' };
 
     // Convert HTML to PDF and save it to the /tmp directory
     await new Promise((resolve, reject) => {
-      pdf.create(htmlWithTailwind, options).toFile(pdfFilePath, (err, res) => {
+      pdf.create(htmlContent, options).toFile(pdfFilePath, (err, res) => {
         if (err) {
           console.error("Error during PDF conversion:", err);
           reject(err);
@@ -187,7 +162,6 @@ const uploadFile = async (file) => {
     throw error;
   }
 };
-
 
 module.exports = {
   uploadFile,

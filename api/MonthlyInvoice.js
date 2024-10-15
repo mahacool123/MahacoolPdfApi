@@ -161,18 +161,18 @@ router.post('/updatePaidTotals/:customerId', async (req, res) => {
                 height: auto; 
             }
             h1 { 
-                font-size: 28px; 
+                font-size: 14px; 
                 margin-bottom: 20px; 
                 color: #333; 
             }
             h2 { 
                 margin: 0; 
-                font-size: 24px; 
+                font-size: 12px; 
                 color: #555; 
             }
             .contact-details, .company-details { 
                 margin: 10px 0; 
-                font-size: 14px; 
+                font-size: 7px; 
                 color: #666; 
             }
             .customer-details, .invoice-details { 
@@ -198,14 +198,14 @@ router.post('/updatePaidTotals/:customerId', async (req, res) => {
             }
             .total { 
                 font-weight: bold; 
-                font-size: 18px; 
+                font-size: 9px; 
                 color: #007bff; 
             }
             .payment-info { 
                 margin-top: 10px; 
                 border-top: 2px solid #ddd; 
                 padding-top: 10px; 
-                font-size: 16px; 
+                font-size: 8px; 
             }
             @media print {
                 body { 
