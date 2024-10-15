@@ -161,18 +161,18 @@ router.post('/updatePaidTotals/:customerId', async (req, res) => {
                 height: auto; 
             }
             h1 { 
-                font-size: 14px; 
+                font-size: 12px; 
                 margin-bottom: 20px; 
                 color: #333; 
             }
             h2 { 
                 margin: 0; 
-                font-size: 12px; 
+                font-size: 10px; 
                 color: #555; 
             }
             .contact-details, .company-details { 
                 margin: 10px 0; 
-                font-size: 7px; 
+                font-size: 6px; 
                 color: #666; 
             }
             .customer-details, .invoice-details { 
@@ -186,26 +186,26 @@ router.post('/updatePaidTotals/:customerId', async (req, res) => {
                 box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             }
             h3 { 
-                margin-bottom: 15px; 
+                margin-bottom: 5px; 
                 color: #333; 
                 border-bottom: 2px solid #007bff; 
                 padding-bottom: 5px; 
             }
             p { 
                 margin: 5px 0; 
-                font-size: 16px; 
+                font-size: 8px; 
                 line-height: 1.5; 
             }
             .total { 
                 font-weight: bold; 
-                font-size: 9px; 
+                font-size: 8px; 
                 color: #007bff; 
             }
             .payment-info { 
                 margin-top: 10px; 
                 border-top: 2px solid #ddd; 
                 padding-top: 10px; 
-                font-size: 8px; 
+                font-size: 16px; 
             }
             @media print {
                 body { 
@@ -230,26 +230,26 @@ router.post('/updatePaidTotals/:customerId', async (req, res) => {
                     <p>2317/30, Gali Hinga Beg, Tilak Bazar, Khari Baoli, New Delhi, 110018</p>
                 </div>
             </div>
-            <h1>Invoice Details for Customer ID: ${customerId}</h1>
+            <h1 style="font-size: 10px;">Invoice Details for Customer ID: ${customerId}</h1>
             <div class="customer-details">
-                <h3>Customer Information</h3>
-                <p>Name:</strong> ${customer.name}</p>
-                <p>Business Name:${customer.bussinessName}</p>
-                <p>Email: ${customer.email}</p>
-                <p>Mobile: ${customer.mobile}</p>
-                <p>Address: ${customer.address}</p>
-                <p>GST Number: ${customer.gstNumber || 'N/A'}</p>
+                <h3 style="font-size: 10px;">Customer Information</h3>
+                <p><strong>Name:</strong> ${customer.name}</p>
+                <p><strong>Business Name:</strong> ${customer.bussinessName}</p>
+                <p><strong>Email:</strong> ${customer.email}</p>
+                <p><strong>Mobile:</strong> ${customer.mobile}</p>
+                <p><strong>Address:</strong> ${customer.address}</p>
+                <p><strong>GST Number:</strong> ${customer.gstNumber || 'N/A'}</p>
             </div>
             <div class="invoice-details">
-                <h3>Invoice Summary</h3>
+                <h3 style="font-size: 10px;">Invoice Summary</h3>
                 <p><strong>Paid Amount:</strong> ₹${paidGrandTotalAmounts.toFixed(2)}</p>
-                <p class="total">Total Paid Amount: ₹${totalPaidAmount.toFixed(2)}</p>
-                <p class="total">Grand Total Amount with 18% GST: ₹${grandTotalAmount.toFixed(2)}</p>
-                <p class="total">Unpaid Remaining Amount:₹${unpaidRemainingAmount.toFixed(2)}</p>
+                <p class="total"><strong>Total Paid Amount:</strong> ₹${totalPaidAmount.toFixed(2)}</p>
+                <p class="total"><strong>Grand Total Amount with 18% GST:</strong> ₹${grandTotalAmount.toFixed(2)}</p>
+                <p class="total"><strong>Unpaid Remaining Amount:</strong> ₹${unpaidRemainingAmount.toFixed(2)}</p>
             </div>
             <div class="payment-info">
-                <h3>Payment Details</h3>
-                <p>Payment Date: ${paymentDate.toLocaleDateString()}</p>
+                <h3 style="font-size: 10px;">Payment Details</h3>
+                <p><strong>Payment Date:</strong> ${paymentDate.toLocaleDateString()}</p>
             </div>
         </div>
     `;
