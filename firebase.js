@@ -117,7 +117,12 @@ const uploadFile = async (file) => {
     const htmlContent = buffer.toString('utf8');
 
     // PDF options
-    const options = { format: 'A4' };
+    const options = {
+      format: 'A4',
+      zoomFactor: '0.8' // This can reduce the scaling of the content
+    };
+    
+    
 
     // Convert HTML to PDF and save it to the /tmp directory
     await new Promise((resolve, reject) => {
