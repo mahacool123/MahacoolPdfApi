@@ -118,11 +118,15 @@ const uploadFile = async (file) => {
 
     // PDF options
     const options = {
-      format: 'A4',
-      zoomFactor: '0.8' // This can reduce the scaling of the content
+      format: 'A4',           // Standard A4 format
+      border: {
+        top: '1cm',
+        right: '1cm',
+        bottom: '1cm',
+        left: '1cm'
+      },
+      timeout: 60000,         // 60 seconds timeout to avoid long-running processes
     };
-    
-    
 
     // Convert HTML to PDF and save it to the /tmp directory
     await new Promise((resolve, reject) => {
